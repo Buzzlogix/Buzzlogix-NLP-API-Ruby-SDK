@@ -1,4 +1,4 @@
-# This file was automatically generated for Buzzlogix by APIMATIC BETA v2.0 on 11/09/2015
+# This file was automatically generated for Buzzlogix by APIMATIC BETA v2.0 on 11/18/2015
 
 module BuzzlogixTextAnalysisApi 
   class APIHelper
@@ -45,6 +45,9 @@ module BuzzlogixTextAnalysisApi
       if parameters.nil? then
         abort('no parameters to append')
       end
+
+      #remove any nil values
+      parameters = parameters.reject {|key, value| value.nil?}
 
       # does the query string already has parameters
       has_params = query_builder.include? '?'

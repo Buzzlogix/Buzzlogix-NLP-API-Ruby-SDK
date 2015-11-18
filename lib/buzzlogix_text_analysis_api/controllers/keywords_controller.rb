@@ -1,22 +1,22 @@
 # This file was automatically generated for Buzzlogix by APIMATIC BETA v2.0 on 11/18/2015
 
 module BuzzlogixTextAnalysisApi
-  class TwittersentimentController
+  class KeywordsController
 
     # Initializer with authentication and configuration parameters
     def initialize(apikey)
         @apikey = apikey;
     end
 
-    # The Tweet should be provided as text/plain in the body
+    # The text should be provided as text/plain in the body
     # @param [String] body Required parameter: Supply text to be classified.
     # @return mixed response from the API call
-    def create_return_english_twitter_sentiment body
+    def create_return_english_keywords body
       # the base uri for api requests
       query_builder = Configuration.BASE_URI.dup
 
       # prepare query string for API call
-      query_builder << "/twittersentiment"
+      query_builder << "/keywords"
 
       # validate and preprocess url
       query_url = APIHelper.clean_url query_builder
@@ -45,15 +45,16 @@ module BuzzlogixTextAnalysisApi
       response.body
     end
 
-    # The Tweet should be provided as multipart/form-data with the key 'text'. Files can be uploaded.
+    # The text should be provided as multipart/form-data with the key 'text'. Files can be uploaded.
+    # @param [String] apikey Required parameter: Supply your API key.
     # @param [String] body Required parameter: Supply text to be classified.
     # @return mixed response from the API call
-    def create_return_english_twitter_sentiment_form body
+    def create_return_english_keywords_form apikey, body
       # the base uri for api requests
       query_builder = Configuration.BASE_URI.dup
 
       # prepare query string for API call
-      query_builder << "/twittersentiment/form"
+      query_builder << "/keywords/form"
 
       # validate and preprocess url
       query_url = APIHelper.clean_url query_builder
@@ -62,7 +63,8 @@ module BuzzlogixTextAnalysisApi
       headers = {
         "user-agent" => "APIMATIC 2.0",
         "accept" => "application/json",
-        "apikey" => @apikey
+        "apikey" => @apikey,
+        "apikey" => apikey
       }
 
       # invoke the API call request to fetch the response
