@@ -1,4 +1,4 @@
-# This file was automatically generated for Buzzlogix by APIMATIC BETA v2.0 on 11/18/2015
+# This file was automatically generated for buzzlogix by APIMATIC BETA v2.0 on 11/25/2015
 
 module BuzzlogixTextAnalysisApi
   class KeywordsController
@@ -46,10 +46,9 @@ module BuzzlogixTextAnalysisApi
     end
 
     # The text should be provided as multipart/form-data with the key 'text'. Files can be uploaded.
-    # @param [String] apikey Required parameter: Supply your API key.
     # @param [String] body Required parameter: Supply text to be classified.
     # @return mixed response from the API call
-    def create_return_english_keywords_form apikey, body
+    def create_return_english_keywords_form body
       # the base uri for api requests
       query_builder = Configuration.BASE_URI.dup
 
@@ -63,8 +62,7 @@ module BuzzlogixTextAnalysisApi
       headers = {
         "user-agent" => "APIMATIC 2.0",
         "accept" => "application/json",
-        "apikey" => @apikey,
-        "apikey" => apikey
+        "apikey" => @apikey
       }
 
       # invoke the API call request to fetch the response
