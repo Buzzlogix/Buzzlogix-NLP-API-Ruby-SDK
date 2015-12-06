@@ -39,5 +39,5 @@ Use the following steps to build a gem and use locally
 
         ```
         ctl = BuzzlogixTextAnalysisApi::TwittersentimentController.new params
-        ctl.post_return_english_twitter_sentiment params
+        ctl.post_return_english_twitter_sentiment_plaintext params
         ```
